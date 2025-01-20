@@ -126,19 +126,19 @@ class Player(t.Turtle):
                 if score==63:
                     scoreValue.clear()
                     Background()
-                    Value(scoreValue,"You Win!","black",0,0)
+                    Value(scoreValue,"You Win!","black",-50,0)
 
     def touching_devils(t,self):
         global life
         for d in devils:
-            if d.distance(player)<=25:
+            if d.distance(player)<=10:
                 life=life-1
                 lifeValue.clear()
                 Value(lifeValue,life,"red",-220,270)
                 if life==0:
                     lifeValue.clear()
                     Background()
-                    Value(lifeValue,"You Lose","black",0,0)
+                    Value(lifeValue,"You Lose","black",-50,0)
 
     def move(self,go_x,go_y):
         if (go_x,go_y) not in walls:
